@@ -1,6 +1,6 @@
 <?php
 
-class HomeController extends BaseController {
+class DashboardController extends BaseController {
 
 
 	public function home()
@@ -9,10 +9,7 @@ class HomeController extends BaseController {
 		// Mail::send('emails.auth.reminder', array('name' => 'alex'), function($message){
 		// 	$message->to('jose.pariyani@gmail.com', 'alex gerret', 'test');
 		// });
-		// $test = Authors\Author::update_friends(2, 10, 0, 1);
-		$test = Tool\DashboardingUpdates::update_friends_total(2, 1);
-
-		return View::make('home', array('name' => 'ddasdada'));
+		return View::make('dashboard.home', array('name' => 'ddasdada'));
 	}
 
 }
