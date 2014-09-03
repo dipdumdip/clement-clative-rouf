@@ -1,0 +1,22 @@
+sort	 cotant		width X height	   
+-------------------------------------------------
+  1. 	dashboard	 647  x 502	     
+  2. 	user_profile	 403  x 403
+  3. 	background	1024  x 953
+  4. 	page_header 	 700  x 403
+  5. 	logo		 403  x 403
+  6. 	product		 403  x 403
+  7. 	promotion	 403  x 403
+ 
+
+#################################/\Category
+
+folder	 category		   
+-------------------------
+ 1.	dashboard
+ 2.	user_profile
+ 3.	companypage
+ 4.	cloudpage
+ 5.	events
+ 6.	product
+ 7.	promotion
