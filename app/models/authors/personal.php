@@ -1,8 +1,9 @@
 <?php
-namespace Models\Authors;
+namespace Authors;
 
-use \Models\Database\DatabaseObject as DatabaseObject;
-use \Models\Database\Database as Database;
+use DatabaseModel\DatabaseObject as DatabaseObject;
+
+use DB;
 
 class Personal extends DatabaseObject {
 	
@@ -33,7 +34,14 @@ class Personal extends DatabaseObject {
 	public $author_id_fk;
 	public $view_count;
 
-	//<-----function to delete personal recor by author ID
+		//function to find the profile photo by authors ID
+	public static function find_profile_photo_by_author_id($author_id_fk=0) {
+		$query="SELECT photo FROM ".self::$table_name." WHERE author_id_fk= '{$author_id_fk}' LIMIT 1";
+		$result_holder = DB::select( DB::raw( $query ));
+		return  (static::num_rows($result_holder)) ? static::fetch_assoc($result_holder, 'authorname') : false;
+	}
+ 	 
+ 	 	//<-----function to delete personal recor by author ID
 	public static function delete_author_id_data($author_id_fk=0) {
 		$database= new Database;
 			$query= "DELETE FROM `".static::$table_name."` WHERE author_id_fk = '{$author_id_fk}' LIMIT 1";
@@ -73,14 +81,7 @@ class Personal extends DatabaseObject {
 	  return !empty($data) ? $data['view_count'] : false;
 	}
 	 
-		//function to find the profile photo by authors ID
-	public static function find_profile_photo_by_author_id($author_id_fk=0) {
-		$database= new Database;
-		$result_array =$database->query("SELECT photo FROM ".self::$table_name." WHERE author_id_fk= '{$author_id_fk}' LIMIT 1");
-		$data = $database->fetch_assoc($result_array);
-	  return !empty($data) ? $data['photo'] : false;
-	}
- 	 
+
 		//function to find the profile photo by authors email
 	public static function find_profile_photo_by_email($email_get='') {
 		$database= new Database;

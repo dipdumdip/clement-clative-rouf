@@ -1,8 +1,9 @@
 <?php
-namespace Models\Authors;
+namespace Authors;
 
-use \Models\database\DatabaseObject as DatabaseObject;
-use \Models\Database\Database as Database;
+use DatabaseModel\DatabaseObject as DatabaseObject;
+
+use DB;
 
 // If it's going to need the database, then it's 
 // probably smart to require it before we start.
@@ -18,6 +19,13 @@ class Friends extends DatabaseObject {
 	public $friend_two;
 	public $role;
 	
+ 	// find to count friends OF author
+ public static function friends_count_by_author($auid=0){
+    $query="SELECT COUNT(*) as Total FROM `friends` WHERE friend_one='{$auid}' AND role='fri'";
+		$result_holder = DB::select( DB::raw( $query ));
+		return  (static::num_rows($result_holder)) ? static::fetch_assoc($result_holder, 'Total') : false;
+ }
+    
 
   public static function Friends_List($profile_id, $per_page, $offset) {
      $database= new Database();
@@ -89,15 +97,7 @@ class Friends extends DatabaseObject {
 		return $result_num;
   }
      	
- 	// find to count friends OF author
- public static function friends_count_by_author($auid=0){
-	$database= new Database();
-
-    $result_array =$database->query("SELECT COUNT(*) FROM `friends` WHERE friend_one='{$auid}' AND role='fri'");
-	$data = $database->fetch_assoc($result_array);
-	return !empty($data) ? $data['COUNT(*)'] : false;
- }
-    	
+	
  	// find friends id from author id and frind id
  public static function find_friends_id_by_au_fri($auid=0, $fri_id=0) {
 	$query="SELECT 1 FROM `".static::$table_name."` WHERE friend_one='{$auid}' AND friend_two='{$fri_id}'";

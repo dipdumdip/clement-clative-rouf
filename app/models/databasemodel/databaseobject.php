@@ -28,6 +28,6 @@ class DatabaseObject extends Eloquent implements UserInterface, RemindableInterf
 
 	public static function fetch_object($result_set) {
 		// return $result_set->fetch_object();
-		return $result_set->fetch(PDO::FETCH_OBJ);
+		return $result_set;
 	}
 }

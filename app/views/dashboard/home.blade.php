@@ -26,10 +26,12 @@
           <div id="updatez_reloader" class="hidden" time="{{ time() }}" >
               <div class="realoder_info" tot=""></div>
           </div>
-          <div id="update_loaders">
-             @include('dashboard.comments_all')
-            <div style="clear:both"></div>
-          </div>
+		  <div id="update_loaders">
+				<?php 	// Loading Messages
+ 					echo App::make('DashboardController')->updates();
+				?>
+				<div style="clear:both"></div>
+		  </div>
       </div>
     </div>
 @stop

@@ -1,8 +1,9 @@
 <?php
-namespace Models\Update;
+namespace Update;
 
-use \Database\DatabaseObject as DatabaseObject;
-use \Database\Database as Database;
+use DatabaseModel\DatabaseObject as DatabaseObject;
+
+use DB;
 
 class Commentz extends DatabaseObject {
 	//declairing the table name as static
@@ -26,8 +27,8 @@ class Commentz extends DatabaseObject {
 		// find the total amount of comments 
 	public function Total_replys_no($column='updt',$updt_id_fk=0) {
 		 $query="SELECT COUNT(*) as Total FROM ".static::$table_name." WHERE {$column}='{$updt_id_fk}' ";
-			$result_holder=$this->db->query($query);
-		return  ($result_holder->num_rows() > 0) ? $result_holder->row()->Total : false;
+		$result_holder = DB::select( DB::raw( $query ));
+		return  (static::num_rows($result_holder)) ? static::fetch_assoc($result_holder, 'Total') : false;
 	}
 		 
  	// function to find the record as in after a count
@@ -36,16 +37,17 @@ class Commentz extends DatabaseObject {
 	 	  $query="SELECT * FROM ".static::$table_name." WHERE {$column}='{$updt_id_fk}'
 	 	  				 ORDER BY cmnt_id ASC {$morequery}";
 	
-		$result_holder=$this->db->query($query);
-		return  ($result_holder->num_rows() > 0) ? ($result_holder->result()) : false;
+		$result_holder = DB::select( DB::raw( $query ));
+		return  (static::num_rows($result_holder)) ? static::fetch_object($result_holder) : false;
 	}
 
 	//functions to  Getting Comments with Pagination 
 	public function load_comments_by_updt_id_pagination($column='updt', $updt_id_fk=0, $per_page, $offset){
      		$morequery=(!empty($per_page) || isset($offset)) ? "LIMIT {$per_page} OFFSET {$offset}" : "";
 		$query="SELECT * FROM ".static::$table_name." WHERE {$column}='{$updt_id_fk}' ORDER BY cmnt_id ASC {$morequery}";
-		$result_holder=$this->db->query($query);
-		return  ($result_holder->num_rows() > 0) ? ($result_holder->result()) : false;
+	
+		$result_holder = DB::select( DB::raw( $query ));
+		return  (static::num_rows($result_holder)) ? static::fetch_object($result_holder) : false;
 
 	}
  		//functions to find the last entered record 

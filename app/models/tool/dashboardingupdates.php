@@ -46,13 +46,13 @@ class DashboardingUpdates extends DatabaseObject {
 		$query = "SELECT SUM(id) AS Total 	FROM (
 					(SELECT  COUNT(M.updt_id) as id FROM updatez M, friends F
 						WHERE M.profile_id_fk = F.friend_two
-						{$privacy_str}
+						{$privacy_st}
 						AND F.friend_one ={$author_id_fk} )
 				UNION
 
 				(SELECT  COUNT(M.updt_id) as id FROM updatez M, companylikes CL2
 						WHERE M.company_id_fk = CL2.company_id
-						{$privacy_str}
+						{$privacy_st}
 						AND CL2.author_id ={$author_id_fk} )
 						)AS T";  
 

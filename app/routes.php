@@ -18,14 +18,37 @@ Route::group(array( 'before' => 'auth'), function(){
 					'uses' => 'AccountController@getLogout'
 			));
 
+# ----  DASHBOARD SECTION STARTS HERE-------------------------
 				/*
-					Singing OUT account (GET)
+					Dashboard Home section
 				*/	
 			Route::get('/dashboard/home', array(
 					'as' => 'dashboard-home',
 					'uses' => 'DashboardController@home'
 			));
+							/*
+					Dashboard updates section
+				*/	
+			Route::get('/dashboard/updates', array(
+					'as' => 'dashboard-updates',
+					'uses' => 'DashboardController@updates'
+			));
+				/*
+					Dashboard comments for updates section
+				*/	
+			Route::get('/dashboard/comments', array(
+					'as' => 'dashboard-comments',
+					'uses' => 'DashboardController@comments'
+			));
+				/*
+					Dashboard Reply for updates section
+				*/	
+			Route::get('/dashboard/replys', array(
+					'as' => 'dashboard-replys',
+					'uses' => 'DashboardController@replys'
+			));
 
+# ----  DASHBOARD SECTION ENDS HERE-------------------------
 });
 
 /*

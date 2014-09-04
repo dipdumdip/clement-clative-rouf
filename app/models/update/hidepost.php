@@ -1,10 +1,12 @@
 <?php
-namespace Models\Update;
+namespace Update;
 
-use \Database\DatabaseObject as DatabaseObject;
-use \Database\Database as Database;
+use DatabaseModel\DatabaseObject as DatabaseObject;
 
-class Hide_Post extends DatabaseObject {
+use DB;
+
+
+class HidePost extends DatabaseObject {
 	//declairing the table name as static
 	protected static $table_name="hide_post";
 	//list the essential database fields into an array for CRUD
@@ -18,13 +20,13 @@ class Hide_Post extends DatabaseObject {
 	
   
 	//Insert message into the database 
-  public function Check_hiden_update($author_id_fk, $post_id_fk) 
+  public static function Check_hiden_update($author_id_fk, $post_id_fk) 
 	{
     $query =" SELECT 1 FROM ".static::$table_name." WHERE author_id_fk='{$author_id_fk}'
     						AND post_id_fk='{$post_id_fk}' LIMIT 1";
 	
-		$result_holder=$this->db->query($query);
-		return  ($result_holder->num_rows() > 0) ? true : false;
+		$result_holder = DB::select( DB::raw( $query ));
+		return  (static::num_rows($result_holder)) ? true : false;
        
     }	
 	

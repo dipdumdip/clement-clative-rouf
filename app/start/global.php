@@ -16,9 +16,19 @@ ClassLoader::addDirectories(array(
 	app_path().'/commands',
 	app_path().'/controllers',
 	app_path().'/models',
+	app_path().'/libraries',
 	app_path().'/database/seeds',
 
 ));
+
+/**
+ * <code>
+ * {? $old_section = "whatever" ?}
+ * </code>
+ */
+Blade::extend(function($value) {
+    return preg_replace('/\{\?(.+)\?\}/', '<?php ${1} ?>', $value);
+});
 
 /*
 |--------------------------------------------------------------------------
