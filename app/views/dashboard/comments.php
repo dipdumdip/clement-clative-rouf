@@ -56,10 +56,12 @@
             </div>
             <div class="message_comments_container" style="padding:0px 4px 0px 40px; position:relative;">
              <?php 
-               $x=1; 
-               $comnt_2_id= $com_id.'-'.$level; 
-               echo App::make('DashboardController')->replys($com_id);
-               ?>            
+                   // echo App::make('DashboardController')->replys($com_id, 1);
+                // $x=1; 
+               // $comnt_2_id= $com_id.'-'.$level; 
+               echo App::make('DashboardController')->replys(25);
+
+              ?>            
             </div>  
           <div class="messanger_includer_2 hidden">
               <?php if(isset($session->author_id)){ ?>

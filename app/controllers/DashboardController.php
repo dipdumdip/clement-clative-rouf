@@ -73,7 +73,7 @@ class DashboardController extends BaseController {
 						return View::make('dashboard.updates', $data);
 	}
 
-	public function comments($post_id_real='413-updt', $x_value=0, $level='')	//<-- main updates comments
+	public function comments($post_id_real='', $x_value=0, $level='')	//<-- main updates comments
 	{
 			$dashboarding= new DashboardingUpdates();
 			$personal= new Personal();
@@ -88,8 +88,8 @@ class DashboardController extends BaseController {
 					 
 					 $total_count=$Commentz->Total_replys_no($level, $ID);
 
-				$x2=$x_value;
-					if($x2){
+				$x1=$x_value;
+					if($x1){
 						$second_count= $total_count-2;
 							if($total_count>2){
 							$commentsarray=$Commentz->load_comments_by_updt_id_count($level, $ID, $second_count);
@@ -99,7 +99,7 @@ class DashboardController extends BaseController {
 							}
 					}
 
-					if(!$x2){
+					if(!$x1){
 						$page= empty($page) ? 1 : $page;
 						$total_count= (isset($total_count) && !empty($total_count) )? $total_count : $Commentz->Total_replys_no($level, $ID); 
 						$per_page= 5;
@@ -118,7 +118,7 @@ class DashboardController extends BaseController {
 						}
 					}
 
-							$data['x2']= $x2;
+							$data['x2']= $x1;
 							$data['post_id_real']= $post_id_real;
 							$data['total_count']= $total_count;
 							$data['commentsarray']= $commentsarray;
@@ -144,18 +144,18 @@ class DashboardController extends BaseController {
 						return View::make('dashboard.comments', $data);
 	}
 
-	public static function replys($comnt_2_id='25', $x_value=0)	//<-- main comment replay 
+	public static function replys($comnt_2_id='', $x2_value=0)	//<-- main comment replay 
 	{
 			$dashboarding= new DashboardingUpdates();
 			$personal= new Personal();
 			$friends= new Friends();
 			$Commentz_2= new Commentz_2();
 			$data='';$page=1;$pagination=false;
-			$x_value    = isset($x_value) && !empty($x_value) ? $x_value : 0;
+			$x2_value    = isset($x2_value) && !empty($x2_value) ? $x2_value : 1;
 					 
 				$total_count=$Commentz_2->Total_replys_no($comnt_2_id);
 
-				$x2=$x_value;
+				$x2=$x2_value;
 					if($x2){
 						$second_count=$total_count-1;
 						if($total_count>1){

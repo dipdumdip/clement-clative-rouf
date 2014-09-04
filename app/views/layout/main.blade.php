@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/jquery-ui.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/new_total.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/ximGlue_dash__.css') }}">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

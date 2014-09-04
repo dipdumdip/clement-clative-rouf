@@ -1,0 +1,224 @@
+/*Dashboard Updates comments Replay main css */
+
+#update_area_inc{ padding:10px 30px 10px 30px;  }
+#update_area  { border:solid 1px #BDC7D8; width:99%;  font-size:13px; font-family:Arial, Helvetica, sans-serif; 
+          padding:15px 7px 35px 10px; }
+.comment  { border:solid 1px #BDC7D8; font-family:Arial, Helvetica, sans-serif; }
+#update_button{  font-size:13px;  background-color:#ff6464;   color:#FFF;     padding:5px;  border:solid 1px #333;
+  margin-top:10px;    cursor:pointer; }
+.duplicate_entry{width:200px;margin:20px auto 0; clear:both;font-weight:bolder;font-size:16px;color:red;}
+.button   { background-color:#ff6464; padding:4px 2px 4px 2px;  margin:5px 2px 5px 2px; color:#fff; font-weight:bold; border:solid 1px #333;  font-size:11px;
+    font-family:Arial, Helvetica, sans-serif; cursor:pointer; } 
+.button:hover{background-color: #ff6464;}
+
+#image_upload { overflow:auto; padding:10px;width:560px; font-size:11px;display:none; }
+#webcam_container { overflow:auto; padding:10px;width:560px; font-size:11px;display:none; }
+.borader  { border-left:solid 1px #BDC7D8;border-right:solid 1px #BDC7D8;border-bottom:solid 1px #BDC7D8;   }
+/* status body */
+.realoder_info{float:left;height:18px;width:130px;background:transparent url(../img/icons/reloader_1.png ) no-repeat;font-size:11px;color:#888;
+          font-weight:bolder;margin:3px auto 1px 35%;padding: 6px 6px 3px 12px; cursor:pointer; text-align:right;}
+.realoder_info:hover{border:solid 1px #333;background-color:#aaa;color:#333;background:#aaa url(../img/icons/reloader_2.png ) no-repeat;}
+#updatez_reloader_just{padding: 6px 6px 3px 34%;}
+
+.updatez_each{  position:relative; padding:10px;  border-bottom:solid 1px #dedede;  overflow:hidden;  
+        background-color: #ffffff;margin: 2px 0px 2px 0px;  min-height:50px;  }
+.updatez_each_img { position:absolute;  height:50px;  width:60px; border:solid 1px #dedede; padding:3px;  }
+.updatez_each_data  { padding: 5px 5px 5px 75px; min-height:50px; word-wrap:break-word; overflow:hidden;  display:block;  
+            font-size:12px;   }
+.updatez_each_data b  { color:#006699;  font-weight:bold;}
+.updatez_each_data p  { color:#006699; padding: 5px 5px 5px 5px; margin: 12px 1px 1px 2%;clear:both;float:left;
+            width:96%;font-size:13px; font-weight:bold;}
+        
+.timeline_main_post {  border:1px dashed;    float: left;    font-size: 14px;    font-weight: bold;    margin:0 1%;
+            padding: 10px 0 10px 1%;    width: 97%; color:#333;}
+.new_prod_update  { float:left; width:98%; margin: 5px 1%; font-size:16px;}
+ .new_prod_update>a{color:#f36438;}
+.new_prod_update>a:visited{color:#f36438;}
+.new_prod_update>ends{background-color:#d9f9ac; color:#9e0b0f; font-size:13px;}
+.new_prod_update>cont_link{clear:both; float:left;background-color:#d9f9ac;padding:6px 2px; word-wrap:break-word;
+                      margin-top:6px;color:#9e0b0f; font-size:13px;}
+        
+.time_ago { font-size:11px; color:#999; font-family:Arial, Helvetica, sans-serif; margin-top:5px; float:left;clear:both;}
+.updatez_each_option{position:absolute; right:2%; cursor:pointer;display: none; font-size:11px; font-weight:500;  color:#000; 
+            background-color:#EDEFF4; border:solid 1px #dedede;}
+
+.msg_authorTitle{width:95%;padding:0 5% 2px 0;font-weight:bolder;font-size:12px; color:#333;}
+.msg_authorTitle a{ color:#00F;}
+
+/*.updatez_each:hover{  border:solid 4px #f2b4c0; margin:4px;   } */
+.updatez_each .headInfo{letter-spacing:-.2px;  font-size:13px; font-weight:bold;}
+.updatez_each .headInfo .author{font-size:14px; color:#7a0026}
+
+.updatez_each:hover .updatez_each_data>p { outline: 2px dotted #777; background-color:#EEE; }
+.updatez_each:hover .comment_each_arrow{display:block;}
+
+.updatez_each:hover .updatez_each_option{   display : block;  }
+.updatez_each a:hover {   padding: 2px 3px 4px 0px;}
+
+.timeline_item:hover .updatez_each_option{    display : block;  }
+
+.updatez_each_option:hover {    background-color:#fad8af; }
+
+.updatez_option_cont{ position:absolute;margin: 20px 0px 0px -63px; width:80px;background-color:#fad8af;display: none; 
+            padding: 0px 5px 0px 5px;border:solid 1px #dedede; z-index:1000;outline: 1px solid #777; 
+          }
+.updatez_option_each {margin:0px -5px 0px -10px;float:right; width:100%; text-align:right; padding: 5px 10px 5px 0px;}
+.updatez_option_each:hover {background-color:#EDEFF4;}
+
+#video_linkz_epand  { margin-top:10px;  }
+#video_linkz_epand img{ border:solid 1px #dedede; padding:3px;  }
+
+/* Comment */
+.all_messagebody  { border-bottom:solid 2px #fff; background-color:#F8F3B1; padding:5px 5%; width:90%;
+            overflow:auto;  }
+.messenger_img{ position:absolute; border:0px;float:left; height:110px; width:110px;  padding:2px;  }
+.messege_inc  { padding: 5px 10px 0px 60px;word-wrap: break-word; overflow: hidden;
+            display: block; font-size: 13px;  width: 90%; min-height:50px;}
+.messege_inc b{ font-weight:bold;color:#006699; }
+.messege_inc p{color:#8f0657; padding: 3px 1px 5px 3px; width:86%; margin: 5px 1px 5px 1px;  font-size:11px; font-weight:bolder;  }
+
+.all_messagebody:hover .messege_inc p{outline: 1px dotted #777;  background-color:#EEE;}
+.all_messagebody:hover .replay_each_arrow{display:block;}
+
+.messagetime{   font-size:9px;  color:#666; font-family:Arial, Helvetica, sans-serif; margin-top:2px; }
+
+.message_all_img{   height:35px;width:35px;border:solid 1px #dedede; padding:2px;position:absolute; }
+
+.message_each_del,.message_each_reply {position:absolute; font-weight:bold; right:2%; cursor:pointer; display:none;
+                    background:url(../img/icons/trash.png) center no-repeat; top:0; height:20px; width:20px;}
+.message_each_reply{background:url(../img/icons/reply_com.png) center no-repeat; margin-right:5px; right:6%; top:0;}
+.message_each_del:hover,.message_each_reply:hover {height:22px; width:22px;background-color:#999;}
+.message_each_del:active,.message_each_reply:active {background-color:#F00;}
+.messege_inc:hover .message_each_del,.messege_inc:hover .message_each_reply{    display:block }
+
+.message_container{clear:both;float:left; width:100%;margin:5px 0 0 0;}
+.messanger_includer{clear:both;float:left;  background-color:#F8F3B1; width:98%;  padding:5px 2% 5px 0; margin-bottom:15px; }
+.comment{ width:440px;  height:25px;  font-size:13px; }
+.replay_time_data, .comment_time_data { background-color: #EEEEEE;    border: 1px solid #9e0039;    color: #9e0039;    cursor: default;    font-size: 9px;    font-weight: bold;
+                    padding: 1px 2px;}
+.view_comments,.shrink_comments,.commentopen  {background-color: #f7f4c6;   cursor:pointer; color:#333; font-size:12px; border: 1px solid;
+              padding: 0 5px; }
+.commentopen:hover,.view_comments:hover,.shrink_comments:hover  { text-decoration:underline;    }
+/* Common all */
+.comment_each_vetical_line{    position: absolute;    border: 2px solid #BBB; top: 50px;    bottom: 5px;    left:10%; }
+.updatez_each_vetical_line{    position: absolute;    border: 2px solid #BBB; top: 70px;    bottom: 5px;    left:7%;  }
+.updatez_each_vetical_line:hover,.comment_each_vetical_line:hover{border-right-color:#999; cursor:pointer;}
+
+.comment_each_arrow{border:solid 20px transparent;border-right-color:#BBB; position:absolute;margin:10px 0 0 -40px;  display:none;}
+.replay_each_arrow{border:solid 15px transparent;border-right-color:#BBB; position:absolute;left:20px; display:none;}
+.replay_each_arrow:hover,.comment_each_arrow:hover{border-right-color:#999; cursor:pointer;}
+.messanger_includer_2>.replay_each_arrow{left:-25px;}
+/* Comment 2 */
+.comnt_2_com  { border-bottom:solid 2px #fff;  background-color:#dbf882;  padding:5px 5px 5px 5px; width:95%;
+            overflow:hidden;  position:relative; margin:0 0 0 2%;}
+.messege_inc_2  {   min-height: 20px; word-wrap: break-word;  overflow: hidden; 
+            display: block; font-size: 9px; padding:1px 1px 6px 35px; width:95%;  }
+
+.messege_inc_2 b{ color:#006699;    padding:1px;margin:1px; font-size:11px; }
+.messege_inc_2 p{ color:#bf0472;  padding:1px; margin: 5px 1px 1px 1px ; font-size:11px;   font-weight:bolder;  }
+
+.messege_inc_2:hover p{outline: 1px dotted #777;  background-color:#EEE;}
+
+.messanger_includer_2>.messege_inc_2{padding:0 0 0 10px} 
+
+.message_each_del_2 { font-weight:bold; position:absolute; right:2%;top:0;    cursor:pointer; display:none; 
+            background:url(../img/icons/erase.png) center no-repeat;  height:13px;  width:13px;   }
+.msg_img_2{width:30px;  height:28px;  border:solid 1px #dedede; padding:1px;  position:absolute;}
+.message_each_del_2:hover{    height:17px;  width:17px; background-color:#999;  }
+.message_each_del_2:active{ background-color:#F99;  }
+.messege_inc_2:hover .message_each_del_2{   display:block }
+.messagetime_2{   font-size:9px;  color:#666; font-family:Arial, Helvetica, sans-serif; margin-top:1px; }
+
+.messanger_includer_2{  float:right; position:relative; background-color:#dbf882; width:85%;  padding: 3px 3px 0px 3px; margin-bottom:6px;  }
+
+.comment_2  { border:solid 1px #BDC7D8; font-family:Arial, Helvetica, sans-serif; width:98%; height:30px; font-size:13px; 
+        margin:0 0 0 0;}
+.button_2 {     background-color: #888 !important;      background-position: left bottom;     background-repeat: repeat-x;
+ border: 1px solid #666666;     color: white;     cursor: pointer;      font-size: 12px;      font-weight: bold;    margin-bottom: 0;
+    margin-right: 0;      margin-top: 1px; padding: 0;  height:25px;   text-shadow: 1px 1px 1px #333333;  }
+.button_2:hover{background-color: #f6a377 !important; color:#333; }  
+.comment_button:hover{background-color: #79d6fb !important;  }  
+
+.view_comments_2,.shrink_comments_2 { cursor:pointer; color:#333; font-size:12px; font-weight:bolder; }
+.view_comments_2:hover,.shrink_comments_2:hover { text-decoration:underline;    }
+
+/* Comment 2 endszzzz*/
+.pagination_message{  margin: 3px; font-size:11px;}
+
+.pagination_message li{ list-style: none;float: left;margin-right: 3px;padding:2px; border:solid 1px #dddddd;color:#0063DC;
+        background:lightblue;}
+.pagination_message li:hover  { color:#FF0084;cursor: pointer;  background:orange;  }
+
+.pagination_requests{ margin: 3px; font-size:11px;}
+
+.pagination_requests li{  list-style: none;float: left;margin-right: 3px;padding:7px; border:solid 1px #dddddd;color:#0063DC;
+        background:lightblue;}
+.pagination_requests li:hover { color:#FF0084;cursor: pointer;  background:orange;  }
+
+.pagination_1{  margin: 0px; font-size:11px;}
+
+.pagination_1 li{ list-style: none;float: left;margin-right: 3px;padding:2px; border:solid 1px #dddddd;color:#0063DC;
+        background:lightblue;}
+.pagination_1 li:hover  { color:#FF0084;cursor: pointer;  background:orange;  }
+
+.pagination_2{  margin: 0px; font-size:11px;}
+
+.pagination_2 li{ list-style: none;float: left;margin-right: 3px;padding:2px; border:solid 1px #dddddd;color:#0063DC;
+        background:lightblue;}
+.pagination_2 li:hover  { color:#FF0084;cursor: pointer;  background:orange;  }
+
+
+/* faceb image*/
+.small_face { width:50px;height:35px; }
+.cmnt_face_2  { float:left;width:30px;height:28px;  padding:0px;}
+.big_face { width:60px;height:50px  }
+.smalest_face { width:20px;height:20px;float:right; }
+.prof_face  { width:80px;height:100px }
+#flashmessage { height:15px;  margin-top:10px;  font-size:11px; color:#333;   }
+.morebox  { font-weight:bold; color:#333333;  text-align:center;  margin-top:8px; margin-bottom:8px;  
+      display:block;  font-size:13px; width:96%; cursor:pointer;   padding:2%;}
+
+
+
+/* #Tablet (Portrait)
+================================================== */
+@media only screen and (min-width: 750px) and (max-width: 1024px) {
+  /*Dashboard.php ----  Settings <==STARTS==>*/
+
+ .updatez_each_vetical_line{    left:40px;  }
+ .comment_each_vetical_line{    left:12%; }
+ .message_each_del {   display: block; right:3%; top:1px;}
+ .message_each_del_2{   display: block; right:3%; top:-3px;}
+ .message_each_reply{   display: block; right:10%; top:1px;}
+ .updatez_each_option{   display: block;}
+ .updatez_each_option{   display: block;}    
+}
+
+
+/*  #Mobile
+================================================== */
+
+@media only screen and (max-width: 750px) {
+  /*Dashboard.php ----  Settings <==STARTS==>*/
+  
+#dash_main_left {width:96%; max-width:500px; position:relative; padding:0; margin:0 auto; float:none;}
+ {width:95%; position:relative; border-width: 0;}
+#mobile_navi{ display:block;}
+ .updatez_each_vetical_line{    left:40px;  }
+ .comment_each_vetical_line{   display:none; }
+ .message_each_del {   display: block; right:3%; top:1px;}
+ .message_each_del_2{   display: block; right:3%; top:-3px;}
+ .message_each_reply{   display: block; right:10%; top:1px;}
+ .updatez_each_option{   display: block;}
+ .messagetime,  .messagetime_2{   display: none;}
+
+  /*Dashboard.php ----  Settings <==Ends==>*/
+  
+} 
+ 
+ @media only screen and (max-width: 500px) {
+  
+
+ }
+
+

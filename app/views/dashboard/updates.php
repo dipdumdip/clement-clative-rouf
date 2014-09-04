@@ -1,6 +1,3 @@
-<?php
-?>
-
 <div id="updatez_reloader_just" class="hidden" time="<?php echo time(); ?>" <?php echo $author_ault; ?>>
 
 </div>
@@ -148,10 +145,7 @@
 		<?php if ($comment_checker) { ?> 
 			<div class="message_container"  rel="<?php echo $msg_id;?>">
 				<?php
-					$x=1;
-					$post_id_real=$msg_id;
-					 echo App::make('DashboardController')->comments($post_id_real, $x); 
-					//include($base_document.'_coordinator/message_comment_data/load_comments _byCompany.php'); 
+					 echo App::make('DashboardController')->comments($msg_id, 1); 
 				?>
 			</div>
 
